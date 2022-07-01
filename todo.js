@@ -1,47 +1,134 @@
-$(document).ready(function(){
-    $('#birth-date').mask('00/00/0000');
-    $('#phone-number').mask('000-000-0000');
-   })
+const getAllItems = () => {
+  let itemJson = localStorage.getItem('Items');
 
-   const registerTab = document.getElementsByClassName("register");
-   const regTabEl1 = registerTab[0];
-   const regTabEl2 = registerTab[1];
+  if(itemJson === 'null') {
+      return []
+  } else {
+      itemJson = localStorage.getItem('Item');
+      return itemAll = JSON.parse(itemJson);
+  }
+}
 
-   const userTabs = document.getElementsByClassName("users");
-   const userTabEl1 = userTabs[0];
-   const userTabE12 = userTabs[1];
+const findItem = (allItems, itemsDetails) => {
+  const item = allItems.find(function (element){
+      return element.name === itemDetails
+  });
 
-   let users = [];
-   let itemNameInput;
-   let amountInput;
+  return recipe
+}
 
-   function newUser(itemParam, amountParam) {
-    this._item = itemParam;
-    this._amount =amountParam;
-   }
 
-   let ulEl = document.getElementById("user-list");
+const addingAmount = () => {
 
-   function createUser(){
-    itemNameInput = document.getElementById("item").value;
-    amountInput = document.getElementById("item").value;
-    const theNewUser = new newUser(itemNameInput,amountInput);
-    users.push(theNewUser);
-    createUserElement(theNewUser);
+  const amountField = document.getElementById("amount-txtfield")
+  
+  amountField.textContent ='';
 
-   }
+amounts.array.forEach(element => {
 
-   function displayUserInfo(userParam){
-   
-   let ourlistEl = document.createElement("li");
-   ourlistEl.classList.add("entry");
+  const amountItem = document.createElement("p");
 
-    let ourSpans = 
-        `
-        <span> ${userParam._item} </span>
-        <span> ${userParam._amount} </span>
-    `;
-    ourlistEl.innerHTML = ourSpans;
-    ulEl.appendChild(ourlistEl);
+  const checkbox = document.createElement('input');
 
-   }
+  checkbox.setAttribute('type', 'checkbox');
+
+  checkbox.classList.add('checkbox');
+
+  checkbox.addEventListener('change', (e) => {
+
+      element.completionStatus = e.target,checked
+
+      saveItem(allItems)
+  });
+
+  amountItem.appendChild(checkbox);
+
+  let itemName = document.createElement("SPAN")
+
+  if(element.name.length === '') {
+      itemName.textContent = 'Unnamed Ingredient'
+  } else{
+      itemName.textContent = element.name;
+  }
+
+  itemName.classList.add('text-element')
+  ingredientItem.appendChild(itemName);
+
+});
+}
+
+const renderItem =(item) => {
+  const itemName = document.getElementById("item")
+  const itemDescription = document.getElementById("description")
+
+  itemName.value =item.name;
+  itemDescription.value = recipe.ingredients
+
+  renderAmount(recipe.amounts);
+}
+
+const calculateCompletionStatus = (recipe) => {
+  let count = 0
+
+  let numberofAmounts = recipe.amount.length
+  console.log(numberofAmounts);
+
+  recipe.amounts.forEach( (amount) =>{
+      
+      if(amount.completionStatus === true){
+          count++
+      }
+  })
+
+  if(count === 0) {
+      return 'You have <span> none </span> of the amounts'
+  } else if (count === numberofAmounts){
+      return 'you have <span>all</span> of the amounts'
+  } else {
+      return 'you have <span>Some</span> of the amounts'
+  }
+}
+
+const loadMainPage = () =>{
+
+  const itemFromStorage = getAllItems();
+  if(recipeFromStorage.length === 0){
+     let recipeDiv =document.getElementById("items-div").value;
+     let titleParagraph = document.createElement('h2');
+     titleParagraph.innerHTML ="No item added"
+     recipeDiv.appendChild(titleParagraph) 
+
+  } else{
+      Array.from(itemFromStorage).forEach(element => {
+          console.log(element)
+      })
+  }
+
+}
+
+const filterItem = (allRecipes, filter)=> {
+  return filteredArray =Object.values(allItems).filter((recipe) => {
+
+      if(typeof item.name ===''){
+          const results = item.name.toLowerCase().include()
+      }
+  })
+}
+
+const renderFilterdRecupes =(filterItem) =>{
+
+let renderDiv = document.getElementById("item-div");
+recipeDiv.textContent = ''
+filterRecipe.forEach(renderMainPageItems);
+
+}
+
+const renderMainPageItems = (item) => {
+  let recipeDiv = document.getElementById("item-div");
+  let titleParagraph = document.createElement("h4")
+  let summaryParagraph =document.createElement("H5")
+  let itemBox = document.createElement('a')
+
+  titleParagraph.textContent = item.name
+  titleParagraph.classList.add('list-item')
+}
