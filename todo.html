@@ -5,8 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-do</title>
+    <link rel="stylesheet" href="./todo.css">
+    <script src="./todo.js" defer></script>
 </head>
 <body>
-    
+
+    <nav>
+        <button class="users" id="users-tab-button" onclick="registerTabFunction()">Register User</button>
+        <button class="register" id="regiter-tab-button" onclick="userTabsFunction()">View User List</button>
+    </nav>
+
+    <section class = "users">
+
+        <h1>System Users:</h1>
+
+        <ul id="user-list">
+
+            <li class="header">
+                <span>Item</span>
+                <span>Amount</span>
+            </li>
+
+            <li class="entry">
+                <span>Item</span>
+                <span>Amount</span>
+            </li>
+        
+        </ul>
+    </section>
+
+
+
+    <div class=grid>
+        <input type=checkbox>checkbox #1 
+        <input type=checkbox>checkbox #2 
+        <input type=checkbox>checkbox #3 
+        <input type=checkbox>checkbox #4 
+        <input type=checkbox>checkbox #5 
+        <input type=checkbox>checkbox #6
+        <div class=total>
+            <span class=totalChecked> Total checked: </span>
+            <span class=totalUnChecked> Total Unchecked: </span>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="todo.js"></script>
+    */
 </body>
 </html>

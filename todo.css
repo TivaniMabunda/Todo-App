@@ -1,0 +1,134 @@
+/* counter code */
+::root {
+	counter-reset: checked-sum, unchecked-sum;
+}
+input[type="checkbox"] {
+	counter-increment: unchecked-sum;
+}
+input[type="checkbox"]:checked {
+	counter-increment: checked-sum;
+}
+.totalUnChecked::after {
+	content: counter(unchecked-sum);
+}
+.totalChecked::after {
+	content: counter(checked-sum);
+}
+
+/* grid code */
+.grid {
+	display: grid;
+	grid-template-columns: max-content max-content;
+	grid-row-gap: 6px;
+}
+.total {
+	grid-row: 1;
+	grid-column: 1 / 3;
+}
+
+/* decoration */
+body {
+	font-family: "arial";
+	color: navy;
+	font-size: 13pt;
+}
+/* note: checkbox pseudo element won't work for FF */
+input[type="checkbox"]::after {
+	display: block;
+	content: "";
+	width: 13px;
+	height: 13px;
+	background-color: white;
+	color: navy;
+	border: 1px solid navy;
+	text-align: center;
+}
+input[type="checkbox"]:checked::after {
+	content: "✓";
+	background-color: gold;
+}
+.grid {
+	justify-content: center;
+	border: 5px solid;
+	border-image: linear-gradient(325deg, navy, gold) 1;
+	width: 250px;
+	margin: auto;
+	padding: 50px 0;
+}
+.total {
+	margin: 5px 0 10px 0;
+	width: 135px;
+}
+.total span {
+	background-color: gold;
+	display: inline-block;
+	margin-bottom: 3px;
+	padding: 3px;
+}
+/* counter code */
+::root {
+	counter-reset: checked-sum, unchecked-sum;
+}
+input[type="checkbox"] {
+	counter-increment: unchecked-sum;
+}
+input[type="checkbox"]:checked {
+	counter-increment: checked-sum;
+}
+.totalUnChecked::after {
+	content: counter(unchecked-sum);
+}
+.totalChecked::after {
+	content: counter(checked-sum);
+}
+
+/* grid code */
+.grid {
+	display: grid;
+	grid-template-columns: max-content max-content;
+	grid-row-gap: 6px;
+}
+.total {
+	grid-row: 1;
+	grid-column: 1 / 3;
+}
+
+/* decoration */
+body {
+	font-family: "bellefair";
+	color: navy;
+	font-size: 13pt;
+}
+/* note: checkbox pseudo element won't work for FF */
+input[type="checkbox"]::after {
+	display: block;
+	content: "";
+	width: 13px;
+	height: 13px;
+	background-color: white;
+	color: navy;
+	border: 1px solid navy;
+	text-align: center;
+}
+input[type="checkbox"]:checked::after {
+	content: "✓";
+	background-color: gold;
+}
+.grid {
+	justify-content: center;
+	border: 5px solid;
+	border-image: linear-gradient(325deg, navy, gold) 1;
+	width: 250px;
+	margin: auto;
+	padding: 50px 0;
+}
+.total {
+	margin: 5px 0 10px 0;
+	width: 135px;
+}
+.total span {
+	background-color: gold;
+	display: inline-block;
+	margin-bottom: 3px;
+	padding: 3px;
+}
